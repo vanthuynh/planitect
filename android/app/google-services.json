@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "481264951131",
+    "project_id": "planitect-app",
+    "storage_bucket": "planitect-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481264951131:android:26f341de8ca999a4f5c47e",
+        "android_client_info": {
+          "package_name": "com.vthuynh.van_main_flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "481264951131-kd1lcv58k834ejjtj8bt2ip0otb0qiu1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4T5JDAQYds8wrJDuOWo74MX5LjQPpAtc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "481264951131-kd1lcv58k834ejjtj8bt2ip0otb0qiu1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

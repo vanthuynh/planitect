@@ -65,9 +65,6 @@ class OnBoardingScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-
-
-
                     Padding(
                       padding: EdgeInsets.only(left: 15,right: 15),
                       child: Text("The social media platform designed to get you offline",
@@ -77,8 +74,6 @@ class OnBoardingScreen extends StatelessWidget {
                             fontWeight: FontWeight.w600
                         ),),
                     ),
-
-
 
                     Padding(
                       padding: EdgeInsets.only(left: 15,right: 15),
@@ -90,7 +85,26 @@ class OnBoardingScreen extends StatelessWidget {
 
                         ),),
                     ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: 15,
+                          right: 15
+                      ),
+                      child: MaterialButton(
+                        minWidth: double.infinity,
+                        color: Colors.white,
+                        elevation: 2,
+                        onPressed: (){
+                          // Get.to(()=> LoginView());
+                        },
 
+                        child: Text("Get Started",
+                          style: TextStyle(
+                              fontSize: 18,
+                              color: Color(0xff274560),
+                              fontWeight: FontWeight.w500
+                          ),),),
+                    )
                   ],
                 ),
               ),
