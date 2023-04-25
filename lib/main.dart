@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
 
       title: 'Flutter Demo',
-      theme: _buildTheme(Brightness.dark),
+      theme: _buildTheme(Brightness.light),
       home: OnBoardingScreen(),
     //   theme: ThemeData(
     //     // This is the theme of your application.

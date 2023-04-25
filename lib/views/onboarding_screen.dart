@@ -4,7 +4,7 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext) {
-    return Scaffold(
+    return SafeArea(child: Scaffold(
       body: Column(
         children: [
           Text("Welcome to EMS!",style: TextStyle(
@@ -15,6 +15,6 @@ class OnBoardingScreen extends StatelessWidget {
           ),)
         ],
       ),
-    );
+    ));
   }
 }
