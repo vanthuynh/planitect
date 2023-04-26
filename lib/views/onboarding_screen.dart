@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'auth/login_signup.dart';
+import 'package:get/get.dart';
+
 class OnBoardingScreen extends StatelessWidget {
   // const OnBoardingScreen({Key? key}) : super(key: key);
 
@@ -95,7 +98,7 @@ class OnBoardingScreen extends StatelessWidget {
                         color: Colors.white,
                         elevation: 2,
                         onPressed: (){
-                          // Get.to(()=> LoginView());
+                          Get.to(()=> LoginView());
                         },
 
                         child: Text("Get Started",
