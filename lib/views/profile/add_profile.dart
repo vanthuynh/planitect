@@ -16,6 +16,7 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
+  // calendar feature to pick date of birth
   Future<Null> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
       context: context,
@@ -46,14 +47,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
               InkWell(
                 onTap: () async {
                   final ImagePicker _picker = ImagePicker();
-                  final XFile? image =
-                  await _picker.pickImage(source: ImageSource.camera);
+                  final XFile? image = await _picker.pickImage(source: ImageSource.camera);
                   if (image != null) {
                     profileImage = File(image.path);
                     setState(() {});
                     Navigator.pop(context);
                   }
-
                 },
                 child: Icon(
                   Icons.camera_alt,
@@ -74,7 +73,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     setState(() {});
                     Navigator.pop(context);
                   }
-
                 },
                 child: Image.asset(
                   'assets/gallary.png',
@@ -88,8 +86,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
       },
     );
   }
+  //// Function that attempts to convert hosted image to File type
+  // Future<File> _fileFromImageUrl() async {
+  //   final response = await http.get(Uri.parse('https://i.imgur.com/1eNlgsd.jpg');
+  //
+  //       final documentDirectory = await getApplicationDocumentsDirectory();
+  //
+  //   final file = File(join(documentDirectory.path, 'imagetest.png'));
+  //
+  //   file.writeAsBytesSync(response.bodyBytes);
+  //
+  //   return file;
+  // }
 
   File? profileImage;
+  // var profileImage = File('https://i.imgur.com/1eNlgsd.jpg');
 
   void setSelectedRadio(int val) {
     setState(() {
@@ -234,7 +245,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         'assets/calender.png',
                         cacheHeight: 20,
                       ),
-                      hintText: 'Date Of Birht',
+                      hintText: 'Date Of Birth',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8.0),
                       ),
@@ -303,15 +314,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         return null;
                       }
 
+                      // load profile image if has already been uploaded to firestore
                       if(profileImage == null){
                         Get.snackbar(
                             'Warning', "Image is required.",
                             colorText: Colors.white,
                             backgroundColor: Colors.blue);
                         return null;
+                        // profileImage = File(_fileFromImageUrl());
                       }
 
-
+                      // showing all user profile data
                       authController!.isProfileInformationLoading(true);
 
                       String imageUrl = await authController!.uploadImageToFirebaseStorage(profileImage!);

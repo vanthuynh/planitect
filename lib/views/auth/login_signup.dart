@@ -8,6 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../utils/app_color.dart';
 import '../../widgets/my_widgets.dart';
+import '../profile/add_profile.dart';
 
 class LoginView extends StatefulWidget {
   LoginView({Key? key}) : super(key: key);
@@ -289,7 +290,7 @@ class _LoginViewState extends State<LoginView> {
               socialAppsIcons(
                   text: 'assets/fb.png',
                   onPressed: (){
-                    // Get.to(()=> ProfileScreen());
+                    Get.to(()=> ProfileScreen());
                   }
               ),
 

@@ -7,7 +7,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 // import '../views/bottom_nav_bar/bottom_bar_view.dart';
-// import '../views/profile/add_profile.dart';
+import '../views/profile/add_profile.dart';
 import 'package:path/path.dart' as Path;
 import 'package:van_main_flutter_app/views/home_screen.dart';
 
@@ -27,8 +27,6 @@ class AuthController extends GetxController {
     }).catchError((e) {
       isLoading(false);
       Get.snackbar('Error', "$e");
-
-      ///Error occured
     });
   }
 
@@ -43,7 +41,7 @@ class AuthController extends GetxController {
       isLoading(false);
 
       /// Navigate user to profile screen
-      // Get.to(() => ProfileScreen());
+      Get.to(() => ProfileScreen());
     }).catchError((e) {
       developer.log("Error in authentication $e");
       isLoading(false);
@@ -88,8 +86,9 @@ class AuthController extends GetxController {
   }
 
 
-  var isProfileInformationLoading = false.obs;
+  var isProfileInformationLoading = false.obs; // make it observable
 
+  // function to upload profile image to firestore
   Future<String> uploadImageToFirebaseStorage(File image) async {
     String imageUrl = '';
     String fileName = Path.basename(image.path);
@@ -108,22 +107,22 @@ class AuthController extends GetxController {
 
 
 
+  // Function to upload profile data to firestore
+  uploadProfileData(String imageUrl, String firstName, String lastName,
+      String mobileNumber, String dob, String gender) {
 
-  // uploadProfileData(String imageUrl, String firstName, String lastName,
-  //     String mobileNumber, String dob, String gender) {
-  //
-  //   String uid = FirebaseAuth.instance.currentUser!.uid;
-  //
-  //   FirebaseFirestore.instance.collection('users').doc(uid).set({
-  //     'image': imageUrl,
-  //     'first': firstName,
-  //     'last': lastName,
-  //     'dob': dob,
-  //     'gender': gender
-  //   }).then((value) {
-  //     isProfileInformationLoading(false);
-  //     Get.offAll(()=> BottomBarView());
-  //   });
-  //
-  // }
+    String uid = FirebaseAuth.instance.currentUser!.uid;
+
+    FirebaseFirestore.instance.collection('users').doc(uid).set({
+      'image': imageUrl,
+      'first': firstName,
+      'last': lastName,
+      'dob': dob,
+      'gender': gender
+    }).then((value) {
+      isProfileInformationLoading(false);
+      Get.offAll(()=> HomeScreen());
+    });
+
+  }
 }
