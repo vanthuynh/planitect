@@ -1,29 +1,26 @@
 import 'package:flutter/material.dart';
-import 'auth/login_signup.dart';
 import 'package:get/get.dart';
 
+import 'auth/login_signup.dart';
+
 class OnBoardingScreen extends StatelessWidget {
-  // const OnBoardingScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext) {
+  Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
       body: Container(
         width: double.infinity,
         child: Column(
+
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
 
           children: [
+
             SizedBox(
               height: 50,
             ),
-            Text("Welcome to Planitect!",style: TextStyle(
-              color: Colors.black,
-              fontSize: 27,
-              fontWeight: FontWeight.w700,
 
-            ),),
             Text("Welcome to EMS!",style: TextStyle(
               color: Colors.black,
               fontSize: 27,
@@ -68,6 +65,9 @@ class OnBoardingScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
+
+
+
                     Padding(
                       padding: EdgeInsets.only(left: 15,right: 15),
                       child: Text("The social media platform designed to get you offline",
@@ -77,6 +77,8 @@ class OnBoardingScreen extends StatelessWidget {
                             fontWeight: FontWeight.w600
                         ),),
                     ),
+
+
 
                     Padding(
                       padding: EdgeInsets.only(left: 15,right: 15),
@@ -88,6 +90,11 @@ class OnBoardingScreen extends StatelessWidget {
 
                         ),),
                     ),
+
+
+
+
+
                     Padding(
                       padding: EdgeInsets.only(
                           left: 15,
@@ -108,12 +115,15 @@ class OnBoardingScreen extends StatelessWidget {
                               fontWeight: FontWeight.w500
                           ),),),
                     )
+
                   ],
                 ),
               ),
             ),
+
           ],
-        )
+
+        ),
       ),
     ));
   }

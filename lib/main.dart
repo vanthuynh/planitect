@@ -4,6 +4,7 @@ import 'package:van_main_flutter_app/views/onboarding_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'firebase_options.dart';
+import 'package:get/get.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: _buildTheme(Brightness.light),
       home: OnBoardingScreen(),
+      navigatorKey: Get.key,
     //   theme: ThemeData(
     //     // This is the theme of your application.
     //     //
