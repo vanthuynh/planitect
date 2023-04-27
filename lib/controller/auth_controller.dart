@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 // import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:firebase_storage/firebase_storage.dart';
-// import 'package:google_sign_in/google_sign_in.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 // import '../views/bottom_nav_bar/bottom_bar_view.dart';
 // import '../views/profile/add_profile.dart';
@@ -59,33 +59,33 @@ class AuthController extends GetxController {
     });
   }
 
-  // signInWithGoogle() async {
-  //   isLoading(true);
-  //   // Trigger the authentication flow
-  //   final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-  //
-  //   // Obtain the auth details from the request
-  //   final GoogleSignInAuthentication? googleAuth =
-  //   await googleUser?.authentication;
-  //
-  //   // Create a new credential
-  //   final credential = GoogleAuthProvider.credential(
-  //     accessToken: googleAuth?.accessToken,
-  //     idToken: googleAuth?.idToken,
-  //   );
-  //
-  //   // Once signed in, return the UserCredential
-  //   FirebaseAuth.instance.signInWithCredential(credential).then((value) {
-  //     isLoading(false);
-  //
-  //     ///SuccessFull loged in
-  //     Get.to(() => BottomBarView());
-  //   }).catchError((e) {
-  //     /// Error in getting Login
-  //     isLoading(false);
-  //     developer.log("Error is $e");
-  //   });
-  // }
+  signInWithGoogle() async {
+    isLoading(true);
+    // Trigger the authentication flow
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+    // Obtain the auth details from the request
+    final GoogleSignInAuthentication? googleAuth =
+    await googleUser?.authentication;
+
+    // Create a new credential
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+
+    // Once signed in, return the UserCredential
+    FirebaseAuth.instance.signInWithCredential(credential).then((value) {
+      isLoading(false);
+
+      ///SuccessFull loged in
+      // Get.to(() => BottomBarView());
+    }).catchError((e) {
+      /// Error in getting Login
+      isLoading(false);
+      developer.log("Error is $e");
+    });
+  }
 
 
   // var isProfileInformationLoading = false.obs;

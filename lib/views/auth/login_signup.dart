@@ -289,20 +289,15 @@ class _LoginViewState extends State<LoginView> {
               socialAppsIcons(
                   text: 'assets/fb.png',
                   onPressed: (){
-
                     // Get.to(()=> ProfileScreen());
-
                   }
               ),
 
               socialAppsIcons(
                   text: 'assets/google.png',
                   onPressed: (){
-
-                    // authController.signInWithGoogle();
-
+                    authController.signInWithGoogle();
                   }
-
               ),
             ],
           )
