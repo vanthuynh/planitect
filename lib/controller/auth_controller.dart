@@ -6,10 +6,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-// import '../views/bottom_nav_bar/bottom_bar_view.dart';
+import '../views/bottom_nav_bar/bottom_bar_view.dart';
 import '../views/profile/add_profile.dart';
 import 'package:path/path.dart' as Path;
-import 'package:van_main_flutter_app/views/home_screen.dart';
+import 'package:van_main_flutter_app/views/home/home_screen.dart';
 
 class AuthController extends GetxController {
   // create firebase instance
@@ -23,7 +23,7 @@ class AuthController extends GetxController {
     auth.signInWithEmailAndPassword(email: email!, password: password!).then((value) {
       /// Login Success
       isLoading(false); // assign false when done logging in
-      Get.to(() => HomeScreen());
+      Get.to(() => BottomBarView());
     }).catchError((e) {
       isLoading(false);
       Get.snackbar('Error', "$e");
@@ -77,7 +77,7 @@ class AuthController extends GetxController {
       isLoading(false);
 
       ///SuccessFull loged in
-      // Get.to(() => BottomBarView());
+      Get.to(() => BottomBarView());
     }).catchError((e) {
       /// Error in getting Login
       isLoading(false);
@@ -121,7 +121,7 @@ class AuthController extends GetxController {
       'gender': gender
     }).then((value) {
       isProfileInformationLoading(false);
-      Get.offAll(()=> HomeScreen());
+      Get.offAll(()=> BottomBarView());
     });
 
   }
