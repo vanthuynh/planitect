@@ -39,7 +39,7 @@ class _BottomBarViewState extends State<BottomBarView> {
   //   // TODO: implement initState
   //   super.initState();
   //   Get.put(DataController(),permanent: true);
-  //       FirebaseMessaging.instance.getInitialMessage();
+  //   FirebaseMessaging.instance.getInitialMessage();
   //   FirebaseMessaging.onMessage.listen((message) {
   //
   //     LocalNotificationService.display(message);
