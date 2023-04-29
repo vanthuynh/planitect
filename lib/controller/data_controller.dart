@@ -15,8 +15,6 @@ class DataController extends GetxController{
 
   DocumentSnapshot? myDocument;
 
-
-
   var allUsers  = <DocumentSnapshot>[].obs;
   var filteredUsers = <DocumentSnapshot>[].obs;
   var allEvents = <DocumentSnapshot>[].obs;
@@ -56,6 +54,7 @@ class DataController extends GetxController{
     });
   }
 
+  // function that retrieves user data from firebase
   getMyDocument(){
     FirebaseFirestore.instance.collection('users').doc(auth.currentUser!.uid)
         .snapshots().listen((event) {
@@ -109,6 +108,7 @@ class DataController extends GetxController{
    return isCompleted;
  }
 
+  // call the getMyDocument() whenever DataController has been created
   @override
   void onInit() {
     // TODO: implement onInit

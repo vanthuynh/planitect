@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 // import '../../services/notification_service.dart';
 // import '../community/community.dart';
 import '../home/home_screen.dart';
-// import '../profile/profile.dart';
+import '../profile/profile.dart';
 import 'create_event.dart';
 // import 'message_screen.dart';
 
@@ -31,7 +31,7 @@ class _BottomBarViewState extends State<BottomBarView> {
     // CommunityScreen(),
      CreateEventView(),
     // MessageScreen(),
-    // ProfileScreen()
+    ProfileScreen()
   ];
 
   // @override

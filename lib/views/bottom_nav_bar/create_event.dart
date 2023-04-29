@@ -941,9 +941,8 @@ class _CreateEventViewState extends State<CreateEventView> {
 
                         isCreatingEvent(true); // when this is true, client is currently creating event
 
-                        // Find the particular data
-                        Get.put(DataController());
-                        DataController dataController = Get.find();
+                        Get.put(DataController()); // perhaps same as "DataController? dataController"
+                        DataController dataController = Get.find(); // Find the particular data
 
                         if(media.isNotEmpty){
                           for(int i=0;i<media.length;i++){
