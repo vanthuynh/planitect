@@ -74,6 +74,7 @@ class _BottomBarViewState extends State<BottomBarView> {
                     ),
                   ),
                   label: ''),
+              // ***** commented out since we don't need community page
               BottomNavigationBarItem(
                   icon: Padding(
                     padding: EdgeInsets.only(top: 5),

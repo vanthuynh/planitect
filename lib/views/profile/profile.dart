@@ -58,7 +58,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   ];
   bool isNotEditable = true;
 
-  // DataController? dataController; // ******* Removed from original code for it to work *********
+  DataController? dataController; // ******* Removed from original code for it to work *********
 
   int? followers = 0,following=0;
   String image = '';
@@ -66,7 +66,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   initState(){
     super.initState();
-    Get.put(DataController()); // ****** add this to fix an error from orginal code ******
+    // Get.put(DataController()); // ****** add this to fix an error from orginal code ******
     DataController dataController = Get.find<DataController>();
 
     firstNameController.text = dataController.myDocument!.get('first');
@@ -822,7 +822,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
                   child: InkWell
                     (
-                    onTap: (){
+                    onTap: (){  // check for icons
                       if(isNotEditable ==false){
                         FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser!.uid)
                             .set({
