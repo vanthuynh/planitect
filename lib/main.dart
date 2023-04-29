@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:van_main_flutter_app/views/bottom_nav_bar/bottom_bar_view.dart';
 import 'package:van_main_flutter_app/views/onboarding_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -20,6 +21,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
+    // code snippet from flutter page for theme
     ThemeData _buildTheme(brightness) {
       var baseTheme = ThemeData(brightness: brightness);
 
@@ -31,7 +34,7 @@ class MyApp extends StatelessWidget {
 
       title: 'Flutter Demo',
       theme: _buildTheme(Brightness.light),
-      home: OnBoardingScreen(),
+      home: FirebaseAuth.instance.currentUser == null? OnBoardingScreen() : BottomBarView(),
       navigatorKey: Get.key,
     //   theme: ThemeData(
     //     // This is the theme of your application.
