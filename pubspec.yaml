@@ -46,6 +46,8 @@ dependencies:
   firebase_storage: ^11.1.1
   video_thumbnail:
   dotted_border:
+  emoji_picker_flutter: ^1.5.4
+  firebase_messaging: ^14.4.1
 
 dev_dependencies:
   flutter_test:

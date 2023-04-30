@@ -122,7 +122,6 @@ class _MessageScreenState extends State<MessageScreen> {
                         image = '';
                       }
 
-
                       String fcmToken = '';
                        try{
                         fcmToken = dataController.filteredUsers[index].get('fcmToken');
@@ -139,7 +138,7 @@ class _MessageScreenState extends State<MessageScreen> {
                             chatRoomId = '${dataController.filteredUsers[index].id}-$myUid';
                           }
 
-                          // Get.to(() => Chat(groupId: chatRoomId,name: name,image: image,fcmToken: fcmToken,uid: dataController.filteredUsers[index].id,));
+                          Get.to(() => Chat(groupId: chatRoomId,name: name,image: image,fcmToken: fcmToken,uid: dataController.filteredUsers[index].id,));
                         },
                         child: Container(
                           margin: EdgeInsets.only(top: 20),

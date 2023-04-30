@@ -24,15 +24,15 @@ class DataController extends GetxController{
 
   var isEventsLoading = false.obs;
 
-
   var isMessageSending = false.obs;
+
+  // function that send messages to firebase
   sendMessageToFirebase({
     Map<String,dynamic>? data,
     String? lastMessage,
     String? grouid
   })async{
-
-   isMessageSending(true);
+    isMessageSending(true);
 
     await FirebaseFirestore.instance.collection('chats').doc(grouid).collection('chatroom').add(data!);
     await FirebaseFirestore.instance.collection('chats').doc(grouid).set({
@@ -42,9 +42,7 @@ class DataController extends GetxController{
     },SetOptions(merge: true));
 
     isMessageSending(false);
-
   }
-
 
   createNotification(String recUid){
     FirebaseFirestore.instance.collection('notifications').doc(recUid).collection('myNotifications').add({
