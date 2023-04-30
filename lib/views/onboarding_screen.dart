@@ -31,19 +31,21 @@ class OnBoardingScreen extends StatelessWidget {
               height: 5,
             ),
 
-            Text("Event Management System",style: TextStyle(fontSize: 16),),
+            // Text("Event Management System",style: TextStyle(fontSize: 16),),
 
             SizedBox(
-              height: 50,
+              height: 100,
             ),
 
             Padding(
-              padding: EdgeInsets.only(left: 15,right: 15),
-              child: Image.asset('assets/onboardIcon.png'),
+              // padding: EdgeInsets.only(left: 15,right: 15),
+              // child: Image.asset('assets/onboardIcon.png'),
+              padding: EdgeInsets.only(left: 150,right: 150),
+              child: Image.asset('assets/plurk.png'),
             ),
 
             SizedBox(
-              height: 50,
+              height: 150,
             ),
 
 
@@ -70,7 +72,7 @@ class OnBoardingScreen extends StatelessWidget {
 
                     Padding(
                       padding: EdgeInsets.only(left: 15,right: 15),
-                      child: Text("The social media platform designed to get you offline",
+                      child: Text("Build great memories!",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 20,
@@ -82,7 +84,7 @@ class OnBoardingScreen extends StatelessWidget {
 
                     Padding(
                       padding: EdgeInsets.only(left: 15,right: 15),
-                      child: Text("EMS is an app where users can leverage their social network to create, discover, share, and monetize events or services.",
+                      child: Text("Planitect is an app where users can collaborate with friends to gather travel itineraries, plans for party, and more.",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 16,

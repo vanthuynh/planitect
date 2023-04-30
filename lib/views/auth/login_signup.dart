@@ -287,12 +287,12 @@ class _LoginViewState extends State<LoginView> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              socialAppsIcons(
-                  text: 'assets/fb.png',
-                  onPressed: (){
-                    Get.to(()=> ProfileScreen());
-                  }
-              ),
+              // socialAppsIcons(
+              //     text: 'assets/fb.png',
+              //     onPressed: (){
+              //       Get.to(()=> ProfileScreen());
+              //     }
+              // ),
 
               socialAppsIcons(
                   text: 'assets/google.png',
@@ -396,11 +396,11 @@ class _LoginViewState extends State<LoginView> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                socialAppsIcons(
-                    text: 'assets/fb.png',
-                    onPressed: (){
-                    }
-                ),
+                // socialAppsIcons(
+                //     text: 'assets/fb.png',
+                //     onPressed: (){
+                //     }
+                // ),
 
                 socialAppsIcons(
                     text: 'assets/google.png',
