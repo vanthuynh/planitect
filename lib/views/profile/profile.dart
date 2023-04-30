@@ -66,7 +66,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   initState(){
     super.initState();
-    // Get.put(DataController()); // ****** add this to fix an error from orginal code ******
+    // Get.put(DataController()); // ****** add this to fix an error from original code ******
     DataController dataController = Get.find<DataController>();
 
     firstNameController.text = dataController.myDocument!.get('first');

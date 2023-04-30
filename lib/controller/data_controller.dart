@@ -15,6 +15,7 @@ class DataController extends GetxController{
 
   DocumentSnapshot? myDocument;
 
+  // fetch all users and events, make them observable
   var allUsers  = <DocumentSnapshot>[].obs;
   var filteredUsers = <DocumentSnapshot>[].obs;
   var allEvents = <DocumentSnapshot>[].obs;
@@ -123,6 +124,9 @@ class DataController extends GetxController{
 
   getUsers(){
     isUsersLoading(true);
+    // we need to get data from collection "users" from firestore
+    // snapshot allows live editing supports, so we can get latest change
+    // listen = method that can listen to all of events
     FirebaseFirestore.instance.collection('users').snapshots().listen((event) {
       allUsers.value = event.docs;
       filteredUsers.value.assignAll(allUsers);
