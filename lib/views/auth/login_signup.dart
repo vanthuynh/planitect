@@ -311,8 +311,6 @@ class _LoginViewState extends State<LoginView> {
     return SingleChildScrollView(
         child: Column(
           children: [
-
-
             myTextField(
                 bool: false,
                 icon: 'assets/mail.png',
