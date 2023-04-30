@@ -21,7 +21,7 @@ class OnBoardingScreen extends StatelessWidget {
               height: 50,
             ),
 
-            Text("Welcome to EMS!",style: TextStyle(
+            Text("Welcome to Planitect!",style: TextStyle(
               color: Colors.black,
               fontSize: 27,
               fontWeight: FontWeight.w700,
@@ -90,10 +90,6 @@ class OnBoardingScreen extends StatelessWidget {
 
                         ),),
                     ),
-
-
-
-
 
                     Padding(
                       padding: EdgeInsets.only(

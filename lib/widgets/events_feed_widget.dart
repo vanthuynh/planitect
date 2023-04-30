@@ -42,8 +42,8 @@ List<AustinYogaWork> austin = [
 
   Widget buildCard({String? image, text, Function? func,DocumentSnapshot? eventData}) {
 
-DataController dataController = Get.find<DataController>();
-
+    DataController dataController = Get.find<DataController>();
+    // get list of joined users
     List joinedUsers = [];
 
     try{
@@ -135,7 +135,7 @@ List eventSavedByUsers = [];
                       borderRadius: BorderRadius.circular(4),
                       border: Border.all(color: Color(0xffADD8E6))),
                   child: Text(
-                    '${dateInformation[0]}-${dateInformation[1]}',
+                    '${dateInformation[0]}-${dateInformation[1]}', // Time stamp of events
                     style: TextStyle(
                       fontSize: 10,
                       fontWeight: FontWeight.w500,
@@ -188,19 +188,14 @@ List eventSavedByUsers = [];
                 width: Get.width*0.6,
                 height: 50,
                 child: ListView.builder(itemBuilder: (ctx,index){
-
-
                     DocumentSnapshot user = dataController.allUsers.firstWhere((e)=> e.id == joinedUsers[index]);
 
                     String image = '';
-
                     try{
                       image = user.get('image');
                     }catch(e){
                       image = '';
                     }
-
-
 
                 return Container(
                   margin: EdgeInsets.only(left: 10),
@@ -211,9 +206,6 @@ List eventSavedByUsers = [];
                 );
               },itemCount: joinedUsers.length,scrollDirection: Axis.horizontal,)
               ),
-
-
-              
             ],
           ),
           SizedBox(
@@ -323,6 +315,7 @@ List eventSavedByUsers = [];
       image = '';
     }
 
+    // get single images from a list of the event's images
     String eventImage = '';
     try{
       List media = event.get('media') as List;

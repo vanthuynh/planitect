@@ -12,13 +12,9 @@ import '../../utils/app_color.dart';
 // import 'package:intl/intl.dart';
 class EventPageView extends StatefulWidget {
 
-
   DocumentSnapshot eventData,user;
 
   EventPageView(this.eventData,this.user);
-
-
-
 
   @override
   _EventPageViewState createState() => _EventPageViewState();
@@ -26,19 +22,14 @@ class EventPageView extends StatefulWidget {
 
 class _EventPageViewState extends State<EventPageView> {
 
-
 DataController dataController = Get.find<DataController>();
-  
 
 List eventSavedByUsers = [];
 
   @override
   Widget build(BuildContext context) {
 
-
-
     String image = '';
-
     try{
       image = widget.user.get('image');
     }catch(e){
@@ -50,12 +41,11 @@ List eventSavedByUsers = [];
       List media = widget.eventData.get('media') as List;
       Map mediaItem = media.firstWhere((element) => element['isImage'] == true) as Map;
       eventImage = mediaItem['url'];
-    }catch(e){
+    }catch(e) {
       eventImage = '';
     }
 
-
-  List joinedUsers = [];
+    List joinedUsers = [];
 
     try{
       joinedUsers = widget.eventData.get('joined');
@@ -63,20 +53,20 @@ List eventSavedByUsers = [];
       joinedUsers = [];
     }
 
-List tags = [];
-try{
-  tags = widget.eventData.get('tags');
-}catch(e){
-  tags = [];
-}
+  List tags = [];
+  try{
+   tags = widget.eventData.get('tags');
+  }catch(e){
+    tags = [];
+  }
 
-String tagsCollectively = '';
+  String tagsCollectively = '';
 
-tags.forEach((e){
-  tagsCollectively += '#$e ';
-});
+  tags.forEach((e){
+    tagsCollectively += '#$e ';
+  });
 
-int likes = 0;
+  int likes = 0;
   int comments = 0;
 
   try{
@@ -92,11 +82,11 @@ int likes = 0;
   }
 
 
-                    try{
-                      eventSavedByUsers = widget.eventData.get('saves');
-                    }catch(e){
-                      eventSavedByUsers = [];
-                    }
+  try{
+    eventSavedByUsers = widget.eventData.get('saves');
+  }catch(e){
+    eventSavedByUsers = [];
+  }
 
   // DateTime d = DateTime.tryParse(widget.eventData.get('date'))!;
 
@@ -462,30 +452,29 @@ int likes = 0;
                   ),
                   Spacer(),
                   InkWell(
+                    // Bookmarking feature
                     onTap: (){
+                      if(eventSavedByUsers.contains(FirebaseAuth.instance.currentUser!.uid)){
 
-                    if(eventSavedByUsers.contains(FirebaseAuth.instance.currentUser!.uid)){
-
-                      FirebaseFirestore.instance.collection('events').doc(widget.eventData.id).set({
-                        'saves': FieldValue.arrayRemove([FirebaseAuth.instance.currentUser!.uid])
-                      },SetOptions(merge: true));
-
+                        FirebaseFirestore.instance.collection('events').doc(widget.eventData.id).set({
+                          'saves': FieldValue.arrayRemove([FirebaseAuth.instance.currentUser!.uid])
+                        },SetOptions(merge: true));
 
 
-                      eventSavedByUsers.remove(FirebaseAuth.instance.currentUser!.uid);
-                      setState(() {
-                        
-                      });
 
-                    }else{
-                      FirebaseFirestore.instance.collection('events').doc(widget.eventData.id).set({
-                        'saves': FieldValue.arrayUnion([FirebaseAuth.instance.currentUser!.uid])
-                      },SetOptions(merge: true));
-                       eventSavedByUsers.add(FirebaseAuth.instance.currentUser!.uid);
-                      setState(() {
-                        
-                      });
-                    }
+                        eventSavedByUsers.remove(FirebaseAuth.instance.currentUser!.uid);
+                        setState(() {
+
+                        });
+
+                      }else{
+                        FirebaseFirestore.instance.collection('events').doc(widget.eventData.id).set({
+                          'saves': FieldValue.arrayUnion([FirebaseAuth.instance.currentUser!.uid])
+                        },SetOptions(merge: true));
+                         eventSavedByUsers.add(FirebaseAuth.instance.currentUser!.uid);
+
+                        setState(() {});
+                      }
                     },
                     child: Image.asset(
                     'assets/boomMark.png',

@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import '../home/home_screen.dart';
 import '../profile/profile.dart';
 import 'create_event.dart';
-// import 'message_screen.dart';
+import 'message_screen.dart';
 
 class BottomBarView extends StatefulWidget {
   BottomBarView({Key? key}) : super(key: key);
@@ -30,7 +30,7 @@ class _BottomBarViewState extends State<BottomBarView> {
     HomeScreen(),
     // CommunityScreen(),
      CreateEventView(),
-    // MessageScreen(),
+    MessageScreen(),
     ProfileScreen()
   ];
 
@@ -75,23 +75,23 @@ class _BottomBarViewState extends State<BottomBarView> {
                   ),
                   label: ''),
               // ***** commented out since we don't need community page
+              // BottomNavigationBarItem(
+              //     icon: Padding(
+              //       padding: EdgeInsets.only(top: 5),
+              //       child: Image.asset(
+              //         currentIndex == 1
+              //             ? 'assets/Group 18340 (1).png'
+              //             : 'assets/Group 18340.png',
+              //         width: 22,
+              //         height: 22,
+              //       ),
+              //     ),
+              //     label: ''),
               BottomNavigationBarItem(
                   icon: Padding(
                     padding: EdgeInsets.only(top: 5),
                     child: Image.asset(
-                      currentIndex == 1
-                          ? 'assets/Group 18340 (1).png'
-                          : 'assets/Group 18340.png',
-                      width: 22,
-                      height: 22,
-                    ),
-                  ),
-                  label: ''),
-              BottomNavigationBarItem(
-                  icon: Padding(
-                    padding: EdgeInsets.only(top: 5),
-                    child: Image.asset(
-                        currentIndex == 2
+                        currentIndex == 1
                             ? 'assets/Group 18528 (1).png'
                             : 'assets/Group 18528.png',
                         width: 22,
@@ -102,7 +102,7 @@ class _BottomBarViewState extends State<BottomBarView> {
                   icon: Padding(
                     padding: EdgeInsets.only(top: 5),
                     child: Image.asset(
-                        currentIndex == 3
+                        currentIndex == 2
                             ? 'assets/Group 18339 (1).png'
                             : 'assets/Group 18339.png',
                         width: 22,
@@ -113,7 +113,7 @@ class _BottomBarViewState extends State<BottomBarView> {
                   icon: Padding(
                     padding: EdgeInsets.only(top: 5),
                     child: Image.asset(
-                      currentIndex == 4
+                      currentIndex == 3
                           ? 'assets/Group 18341 (1).png'
                           : 'assets/Group 18341.png',
                       width: 22,

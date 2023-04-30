@@ -17,7 +17,7 @@ class DataController extends GetxController{
 
   // fetch all users and events, make them observable
   var allUsers  = <DocumentSnapshot>[].obs;
-  var filteredUsers = <DocumentSnapshot>[].obs;
+  var filteredUsers = <DocumentSnapshot>[].obs; // used for messaging modules
   var allEvents = <DocumentSnapshot>[].obs;
   var filteredEvents = <DocumentSnapshot>[].obs;
   var joinedEvents = <DocumentSnapshot>[].obs;

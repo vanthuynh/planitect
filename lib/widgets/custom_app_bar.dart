@@ -14,7 +14,7 @@ Widget CustomAppBar(){
                         width: 116,
                         height: 17,
                         child: myText(
-                            text: 'EMS',
+                            text: 'Planitect',
                             style: TextStyle(
                                 color: AppColors.blue,
                                 fontWeight: FontWeight.bold,fontSize: 16)),
