@@ -744,9 +744,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     //   ),
                     // ),
 
-                    SizedBox(height: 40),
+                    SizedBox(height: 100),
                     ElevatedButton.icon(
-                      style: ElevatedButton.styleFrom(minimumSize: Size.fromHeight(50),),
+                      style: ElevatedButton.styleFrom(backgroundColor: AppColors.blue, minimumSize: Size.fromHeight(50),),
                       icon: Icon(Icons.arrow_back,size: 32),
                       label: Text('Sign Out', style: TextStyle(fontSize: 24),),
                       onPressed: () {
