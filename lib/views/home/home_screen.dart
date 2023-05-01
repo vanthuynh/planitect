@@ -15,7 +15,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
 
   // DataController dataController = Get.find<DataController>();
-  final DataController dataController = Get.put(DataController()); // attemp fixing DataController not null error
+  DataController dataController = Get.put(DataController()); // attemp fixing DataController not null error
 
   @override
   Widget build(BuildContext context) {
