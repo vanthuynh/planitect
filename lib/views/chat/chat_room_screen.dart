@@ -144,7 +144,7 @@ class _ChatState extends State<Chat> {
                         }
 
                         List<DocumentSnapshot> data =
-                            snapshot.data!.docs.reversed.toList();
+                            snapshot.data!.docs.toList();
 
                         return ListView.builder(
                           reverse: true,
