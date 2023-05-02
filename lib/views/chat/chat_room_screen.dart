@@ -129,6 +129,7 @@ class _ChatState extends State<Chat> {
       ),
       body: Column(
         children: [
+          // Expanded is the message list screen in the middle
           Expanded(
               child: Obx(()=> dataController!.isMessageSending.value
                   ? Center(
@@ -194,7 +195,7 @@ class _ChatState extends State<Chat> {
 
                     ),
 
-
+          // This is the chat textbox, including emoji icon, file embedding feature, and send button
           Container(
             height: isEmojiPickerOpen ? 300 : 75,
             // padding: MediaQuery.of(context).viewInsets,
@@ -297,7 +298,8 @@ class _ChatState extends State<Chat> {
                               dataController!.sendMessageToFirebase(
                                   data: data,
                                   grouid: widget.groupId,
-                                  lastMessage: message);
+                                  lastMessage: message
+                              );
                               // *** Commented out notification service
                               // dataController!.createNotification(widget.uid!);
                               // LocalNotificationService.sendNotification(title: 'New message',message: message,token: widget.fcmToken);
@@ -345,7 +347,7 @@ class _ChatState extends State<Chat> {
                             noRecents: const Text(
                               'No Recents',
                               style: TextStyle(fontSize: 20, color: Colors.black26),
-                              textAlign: TextAlign.center,
+                              // textAlign: TextAlign.center,
                             ),
                             // noRecentsStyle: const TextStyle(fontSize: 20, color: Colors.black26), // removed from emoji_picker_flutter 1.2.0
                             tabIndicatorAnimDuration: kTabScrollDuration,
