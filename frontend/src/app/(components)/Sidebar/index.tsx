@@ -135,14 +135,12 @@ interface SidebarLinkProps {
   href: string;
   icon: LucideIcon;
   label: string;
-  // isCollapsed: boolean;
 }
 
 const SidebarLink = ({
   href, // url link for each sidebar link
   icon: Icon,
   label,
-  // isCollapsed,
 }: SidebarLinkProps) => {
   const pathname = usePathname();
   const isActive =
