@@ -1,3 +1,4 @@
+"use client";
 import { useAppSelector } from "@/app/redux";
 import React from "react";
 
