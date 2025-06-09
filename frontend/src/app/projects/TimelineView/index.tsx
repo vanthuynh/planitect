@@ -29,7 +29,7 @@ const Timeline = ({ id, setIsModalNewTaskOpen }: Props) => {
         end: new Date(task.dueDate as string),
         name: task.title,
         id: `Task-${task.id}`,
-        type: "task" as TaskTypeItems,
+        type: "task" as "TaskType",
         progress: task.points ? (task.points / 10) * 100 : 0,
         isDisabled: false,
       })) || []
