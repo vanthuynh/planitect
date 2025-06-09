@@ -1,13 +1,15 @@
 import { useAppSelector } from "@/app/redux";
 import { useGetTasksQuery } from "@/state/api";
 import { DisplayOption, Gantt, ViewMode } from "gantt-task-react";
-import "gantt-task-react/dist/index.css"; // part of gantt-task-react library
+import "gantt-task-react/dist/index.css";
 import React, { useMemo, useState } from "react";
 
 type Props = {
   id: string;
   setIsModalNewTaskOpen: (isOpen: boolean) => void;
 };
+
+type TaskTypeItems = "task" | "milestone" | "project";
 
 const Timeline = ({ id, setIsModalNewTaskOpen }: Props) => {
   const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
@@ -29,14 +31,13 @@ const Timeline = ({ id, setIsModalNewTaskOpen }: Props) => {
         end: new Date(task.dueDate as string),
         name: task.title,
         id: `Task-${task.id}`,
-        type: "task" as "TaskType",
+        type: "task" as TaskTypeItems,
         progress: task.points ? (task.points / 10) * 100 : 0,
         isDisabled: false,
       })) || []
     );
   }, [tasks]);
 
-  // Handle view change base on the date provided
   const handleViewModeChange = (
     event: React.ChangeEvent<HTMLSelectElement>,
   ) => {

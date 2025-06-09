@@ -33,7 +33,7 @@ export interface User {
 }
 
 export interface Attachment {
-  id: Number;
+  id: number;
   fileURL: string;
   fileName: string;
   taskId: number;
@@ -58,6 +58,12 @@ export interface Task {
   assignee?: User;
   comments?: Comment[];
   attachments?: Attachment[];
+}
+
+export interface SearchResults {
+  tasks?: Task[];
+  projects?: Project[];
+  users?: User[];
 }
 
 //// make API endpoints call to the backend utilize redux toolkit:
@@ -105,6 +111,9 @@ export const api = createApi({
         { type: "Tasks", id: taskId },
       ],
     }),
+    search: build.query<SearchResults, string>({
+      query: (query) => `search?query=${query}`,
+    }),
   }),
 });
 
@@ -114,4 +123,5 @@ export const {
   useGetTasksQuery,
   useCreateTaskMutation,
   useUpdateTaskStatusMutation,
+  useSearchQuery,
 } = api;
