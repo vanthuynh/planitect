@@ -1,3 +1,9 @@
+### PLANITECT
+
+### Live Demo
+
+![project-demo-gif](./asset/demo.gif)
+
 ## Technology Stack
 
 - **Frontend**: Next.js, Tailwind CSS, Redux Toolkit, Redux Toolkit Query, Material UI Data Grid
